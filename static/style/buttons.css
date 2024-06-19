@@ -1,0 +1,4 @@
+.list-group-item-action.active {
+    background-color: #157348; /* Bootstrap's green color */
+    border-color: #157348; /* Match border color */
+}
