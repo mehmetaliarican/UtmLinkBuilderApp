@@ -13,7 +13,7 @@ class ContactRequest(models.Model):
     surname = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)  # Use EmailField for email validation
     mobile = models.CharField(validators=[phone_regex], max_length=17, blank=True)  # Add phone number validation
-    landline = models.CharField(validators=[phone_regex], max_length=17, blank=True)  # Add phone number validation
+    companyWebSite = models.CharField(validators=[phone_regex], max_length=17, blank=True)  # Add phone number validation
     created = models.DateTimeField(default=timezone.now)  # Set default to current date and time
     isHandled = models.BooleanField(default=False)  # Set default to False
     

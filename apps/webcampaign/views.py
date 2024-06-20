@@ -15,8 +15,6 @@ def web_campaign_url_create(request):
             utm_params = {
                 'utm_source': campaign.utm_source,
                 'utm_medium': campaign.utm_medium,
-                'utm_campaign': campaign.utm_campaign,
-                'utm_id': campaign.utm_id,
                 'utm_term': campaign.utm_term,
                 'utm_content': campaign.utm_content,
             }

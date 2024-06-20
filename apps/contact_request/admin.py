@@ -4,9 +4,9 @@ from .models import ContactRequest
 from django.utils.html import format_html
 
 class ContactRequestAdmin(admin.ModelAdmin):
-    list_display = ('name', 'surname', 'email_link', 'mobile', 'landline', 'created', 'isHandled')
+    list_display = ('name', 'surname', 'email_link', 'mobile', 'companyWebSite', 'created', 'isHandled')
     list_filter = ('isHandled',)  # Add filter for isHandled
-    search_fields = ('name', 'surname', 'email', 'mobile', 'landline')
+    search_fields = ('name', 'surname', 'email', 'mobile', 'companyWebSite')
 
     def get_queryset(self, request):
         queryset = super().get_queryset(request)
@@ -20,10 +20,10 @@ class ContactRequestAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         if obj:  # editing an existing object
-            return ['name', 'surname', 'email', 'mobile', 'landline', 'created']
+            return ['name', 'surname', 'email', 'mobile', 'companyWebSite', 'created']
         return []
 
-    fields = ['name', 'surname', 'email', 'mobile', 'landline', 'created', 'isHandled']
+    fields = ['name', 'surname', 'email', 'mobile', 'companyWebSite', 'created', 'isHandled']
 
     def email_link(self, obj):
         return format_html('<a href="https://calendly.com/{}" target="_blank">{}</a>', obj.email, obj.email)

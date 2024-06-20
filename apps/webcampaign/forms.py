@@ -8,12 +8,11 @@ class CreateWebCampaignUrlForm(forms.ModelForm):
 
     class Meta:
         model = WebCampaignUrl
-        fields = ['website_url', 'utm_id', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+        fields = ['website_url',  'utm_source', 'utm_medium', 'utm_term', 'utm_content']
         labels = {
-            'utm_id': 'Campaign ID',
+            'website_url': 'Website Url',
             'utm_source': 'Campaign Source',
             'utm_medium': 'Campaign Medium',
-            'utm_campaign': 'Campaign Name',
             'utm_term': 'Campaign Term',
             'utm_content': 'Campaign Content',
         }
@@ -27,10 +26,8 @@ class CreateWebCampaignUrlForm(forms.ModelForm):
                 HTML('<h5>Enter the campaign information</h5>'),
                 Div(
                     Field('website_url', css_class='validate', wrapper_class='input-field'),
-                    Field('utm_id', css_class='validate', wrapper_class='input-field'),
                     Field('utm_source', css_class='validate', wrapper_class='input-field'),
                     Field('utm_medium', css_class='validate', wrapper_class='input-field'),
-                    Field('utm_campaign', css_class='validate', wrapper_class='input-field'),
                     Field('utm_term', css_class='validate', wrapper_class='input-field'),
                     Field('utm_content', css_class='validate', wrapper_class='input-field'),
                 ),

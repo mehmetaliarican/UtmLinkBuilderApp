@@ -7,7 +7,10 @@ from .models import ContactRequest
 class ContactRequestForm(forms.ModelForm):
     class Meta:
         model = ContactRequest
-        fields = ['name', 'surname', 'email', 'mobile', 'landline']
+        fields = ['name', 'surname', 'email', 'mobile', 'companyWebSite']
+        labels = {
+            'companyWebSite': 'Company website'
+        }
     
     def __init__(self, *args, **kwargs):
         super(ContactRequestForm, self).__init__(*args, **kwargs)
@@ -21,7 +24,7 @@ class ContactRequestForm(forms.ModelForm):
                 Field('surname', css_class='validate', wrapper_class='input-field'),
                 Field('email', css_class='validate', wrapper_class='input-field'),
                 Field('mobile', css_class='validate', wrapper_class='input-field'),
-                Field('landline', css_class='validate', wrapper_class='input-field'),
+                Field('companyWebSite', css_class='validate', wrapper_class='input-field'),
             ),
             Submit('submit', 'Send', css_class='btn waves-effect waves-light  deep-orange lighten-1'),
             css_class="container"

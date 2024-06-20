@@ -3,8 +3,8 @@ from .models import  WebCampaignUrl
 
 
 class WebCampaignUrlsAdmin(admin.ModelAdmin):
-    list_display = ('website_url','utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id')
-    search_fields = ('website_url','utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id')
+    list_display = ('website_url','utm_source', 'utm_medium', 'utm_term', 'utm_content',)
+    search_fields = ('website_url','utm_source', 'utm_medium',  'utm_term', 'utm_content')
     
     def has_add_permission(self, request):
         return False  # Disable the add feature
