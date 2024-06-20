@@ -23,17 +23,17 @@ class CreatePlayCampaignUrlForm(forms.ModelForm):
         self.helper.form_method = 'post'
         self.helper.layout = Layout(
             Div(
-                HTML('<h1>Enter the campaign information</h1>'),
+                HTML('<h5>Enter the campaign information</h5>'),
                 Div(
-                    Field('ad_network', css_class='form-control', wrapper_class='mb-3'),
-                    Field('application_id', css_class='form-control', wrapper_class='mb-3'),
-                    Field('campaign_source', css_class='form-control', wrapper_class='mb-3'),
-                    Field('campaign_medium', css_class='form-control', wrapper_class='mb-3'),
-                    Field('campaign_term', css_class='form-control', wrapper_class='mb-3'),
-                    Field('campaign_content', css_class='form-control', wrapper_class='mb-3'),
-                    Field('campaign_name', css_class='form-control', wrapper_class='mb-3'),
+                    Field('ad_network', css_class='validate', wrapper_class='input-field'),
+                    Field('application_id', css_class='validate', wrapper_class='input-field'),
+                    Field('campaign_source', css_class='validate', wrapper_class='input-field'),
+                    Field('campaign_medium', css_class='validate', wrapper_class='input-field'),
+                    Field('campaign_term', css_class='validate', wrapper_class='input-field'),
+                    Field('campaign_content', css_class='validate', wrapper_class='input-field'),
+                    Field('campaign_name', css_class='validate', wrapper_class='input-field'),
                 ),
-                Submit('submit', 'Submit', css_class='btn btn-primary'),
+                Submit('submit', 'Get Link', css_class='btn waves-effect waves-light deep-orange lighten-1'),
                 css_class="container"
             )
         )

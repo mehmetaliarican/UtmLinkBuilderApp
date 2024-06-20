@@ -15,15 +15,15 @@ class ContactRequestForm(forms.ModelForm):
         self.helper.form_method = 'post'
         self.helper.layout = Layout(
            Div(
-                HTML('<h1>Leave a message</h1>'),
+                HTML('<h5>Let us call you</h5>'),
                 Div(
-                Field('name', css_class='form-control', wrapper_class='mb-3'),
-                Field('surname', css_class='form-control', wrapper_class='mb-3'),
-                Field('email', css_class='form-control', wrapper_class='mb-3'),
-                Field('mobile', css_class='form-control', wrapper_class='mb-3'),
-                Field('landline', css_class='form-control', wrapper_class='mb-3'),
+                Field('name', css_class='validate', wrapper_class='input-field'),
+                Field('surname', css_class='validate', wrapper_class='input-field'),
+                Field('email', css_class='validate', wrapper_class='input-field'),
+                Field('mobile', css_class='validate', wrapper_class='input-field'),
+                Field('landline', css_class='validate', wrapper_class='input-field'),
             ),
-            Submit('submit', 'Submit', css_class='btn btn-secondary'),
+            Submit('submit', 'Send', css_class='btn waves-effect waves-light  deep-orange lighten-1'),
             css_class="container"
            )
         )

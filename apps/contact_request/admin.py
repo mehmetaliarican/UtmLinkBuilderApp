@@ -15,7 +15,7 @@ class ContactRequestAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):
         return False  # Disable the add feature
     
-    def has_delete_permission(self, request):
+    def has_delete_permission(self, request,obj=None):
         return False  # Disable the delete feature
 
     def get_readonly_fields(self, request, obj=None):

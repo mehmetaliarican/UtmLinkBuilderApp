@@ -24,17 +24,17 @@ class CreateWebCampaignUrlForm(forms.ModelForm):
         self.helper.form_method = 'post'
         self.helper.layout = Layout(
             Div(
-                HTML('<h1>Enter the campaign information</h1>'),
+                HTML('<h5>Enter the campaign information</h5>'),
                 Div(
-                    Field('website_url', css_class='form-control', wrapper_class='mb-3'),
-                    Field('utm_id', css_class='form-control', wrapper_class='mb-3'),
-                    Field('utm_source', css_class='form-control', wrapper_class='mb-3'),
-                    Field('utm_medium', css_class='form-control', wrapper_class='mb-3'),
-                    Field('utm_campaign', css_class='form-control', wrapper_class='mb-3'),
-                    Field('utm_term', css_class='form-control', wrapper_class='mb-3'),
-                    Field('utm_content', css_class='form-control', wrapper_class='mb-3'),
+                    Field('website_url', css_class='validate', wrapper_class='input-field'),
+                    Field('utm_id', css_class='validate', wrapper_class='input-field'),
+                    Field('utm_source', css_class='validate', wrapper_class='input-field'),
+                    Field('utm_medium', css_class='validate', wrapper_class='input-field'),
+                    Field('utm_campaign', css_class='validate', wrapper_class='input-field'),
+                    Field('utm_term', css_class='validate', wrapper_class='input-field'),
+                    Field('utm_content', css_class='validate', wrapper_class='input-field'),
                 ),
-                Submit('submit', 'Submit', css_class='btn btn-success'),
-                css_class="container"
+                Submit('submit', 'Get Link', css_class='btn waves-effect waves-light deep-orange lighten-1'),
+                css_class="container mt-2"
             )
         )

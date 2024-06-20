@@ -10,6 +10,7 @@ class WebCampaignUrl(models.Model):
     utm_campaign = models.CharField(max_length=100, blank=True, null=True)  # Optional
     utm_term = models.CharField(max_length=100, blank=True, null=True)  # Optional
     utm_content = models.CharField(max_length=100, blank=True, null=True)  # Optional
+    created = models.DateTimeField(default=timezone.now)
 
     class Meta:
         verbose_name = "Web Campaign Url"

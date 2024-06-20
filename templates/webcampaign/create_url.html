@@ -3,6 +3,22 @@
 {% block title %}Web Campaign Url{% endblock %}
 
 {% block content %}
+{% load static %}
+<div class="container">
+  <div class="card-panel grey lighten-5 z-depth-1">
+    <div class="row valign-wrapper">
+      <div class="col s2">
+        <img src="/static/images/web_campaign_instructions.webp" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+      </div>
+      <div class="col s10">
+        <h3>Create a Web Campaign URL</h3>
+        <span class="black-text">
+          Please fill out the form below to generate a UTM-tagged URL for your campaign. This will help you track the effectiveness of your online marketing efforts.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
 {% load crispy_forms_tags %}
 {% crispy form %}
 {% endblock %}

@@ -19,7 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('authorized-panel/', admin.site.urls),
-    path('contact_request/', include('apps.contact_request.urls')),
+    path('', include('apps.homepage.urls')),
+    path('contact_us/', include('apps.contact_request.urls')),
     path('playcampaign/', include('apps.playcampaign.urls')),
     path('webcampaign/', include('apps.webcampaign.urls')),
 ]

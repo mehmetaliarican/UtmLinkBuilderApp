@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.db import models
 
 class PlayCampaignUrl(models.Model):
@@ -8,6 +9,7 @@ class PlayCampaignUrl(models.Model):
     campaign_term = models.CharField(max_length=100, blank=True, null=True)
     campaign_content = models.CharField(max_length=100, blank=True, null=True)
     campaign_name = models.CharField(max_length=100, blank=True, null=True)
+    created = models.DateTimeField(default=timezone.now)
 
     class Meta:
         verbose_name = "Play Campaign Url"

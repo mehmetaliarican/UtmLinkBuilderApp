@@ -3,6 +3,22 @@
 {% block title %}Play Campaign Url{% endblock %}
 
 {% block content %}
+{% load static %}
+<div class="container">
+  <div class="card-panel grey lighten-5 z-depth-1">
+    <div class="row valign-wrapper">
+      <div class="col s2">
+        <img src="/static/images/app_campaign_instructions.webp" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+      </div>
+      <div class="col s10">
+        <h3>Create a Play  Campaign URL</h3>
+        <span class="black-text">
+            Please fill out the form below to generate a UTM-tagged URL for your play campaign. This will help you track the effectiveness of your app marketing efforts.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
 {% load crispy_forms_tags %}
 {% crispy form %}
 {% endblock %}
