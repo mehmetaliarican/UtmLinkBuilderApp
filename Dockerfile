@@ -4,6 +4,12 @@ FROM python:3.8-slim
 # Set the working directory
 WORKDIR /app
 
+# Install build dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    libc-dev \
+    build-essential
+
 # Copy the current directory contents into the container at /app
 COPY . /app
 
