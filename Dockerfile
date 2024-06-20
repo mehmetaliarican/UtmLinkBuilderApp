@@ -1,32 +1,26 @@
-# Use the official Python image
-FROM python:3.8-slim
+# Use the official Python image from the Docker Hub
+FROM python:3.11
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Set the working directory
 WORKDIR /app
 
-# Install build dependencies
-RUN apt-get update && apt-get install -y \
-    gcc \
-    libc-dev \
-    build-essential
+# Install dependencies
+COPY requirements.txt /app/
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
-# Copy the current directory contents into the container at /app
-COPY . /app
-
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Install Daphne for ASGI support
-RUN pip install daphne
-
-# Make port 8080 available to the world outside this container
-EXPOSE 8080
-
-# Define environment variable
-ENV PORT 8080
+# Copy the project
+COPY . /app/
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
+# Expose the port the app runs on
+EXPOSE 8000
+
 # Run the application
-CMD ["daphne", "-b", "0.0.0.0", "-p", "8080", "UtmLinkBuilderApp.asgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "UtmLinkBuilderApp.wsgi:application"]
