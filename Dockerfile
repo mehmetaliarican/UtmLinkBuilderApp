@@ -22,5 +22,5 @@ RUN python manage.py collectstatic --noinput
 # Expose the port the app runs on
 EXPOSE 8000
 
-# Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "UtmLinkBuilderApp.wsgi:application"]
+# Run the Django development server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
