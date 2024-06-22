@@ -12,6 +12,7 @@ WORKDIR /app
 COPY requirements.txt /app/
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN pip install gunicorn  # Ensure Gunicorn is installed
 
 # Copy the project
 COPY . /app/
@@ -20,7 +21,7 @@ COPY . /app/
 RUN python manage.py collectstatic --noinput
 
 # Expose the port the app runs on
-EXPOSE 8000
+EXPOSE 8080
 
-# Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "UtmLinkBuilderApp.wsgi:application"]
+# Run Gunicorn server
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "UtmLinkBuilderApp.wsgi:application"]
