@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'apps.homepage.middleware.SEOMiddleware',
 ]
 
 ROOT_URLCONF = 'UtmLinkBuilderApp.urls'
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.homepage.context_processors.seo_settings',
             ],
         },
     },
@@ -132,3 +134,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://utm-link-builder-app-wieffeb5sq-nw.a.run.app',
+    'https://utm-link-builder-app-nili7xdkjq-oe.a.run.app'
+]

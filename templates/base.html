@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{{ seo_title }}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'materialize/css/materialize.min.css' %}">
     <link rel="stylesheet" href="{% static 'style/custom.css' %}">
     {% block extra_head %}{% endblock %}
+    <meta name="description" content="{{ seo_description }}">
+    <meta name="keywords" content="{{ seo_keywords }}">
 </head>
 
 <body>
@@ -22,18 +24,18 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col m2 l2 s12">
-                <ul id="slide-out" class="sidenav sidenav-fixed blue-grey darken-1">
+                <ul id="slide-out" class="sidenav sidenav-fixed blue-grey darken-4">
                     <li>
-                        <img src="{% static 'icons/logo.png' %}" width="200" alt="" class="circle responsive-img">
+                        <img src="{% static 'icons/raenity_logo.svg' %}" alt="" class="raenity-logo">
                     </li>
-                    <li><a href="{% url 'index-page-default' %}" class="white-text">Home<i
+                    <li><a href="{% url 'homepage:index-page-default' %}" class="white-text">Home<i
                         class="material-icons white-text">home</i></a> </li>
-                    <li><a href="{% url 'create-web-campaign-url' %}" class="white-text">Web Campaign Url Builder<i
-                                class="material-icons white-text">insert_link</i></a> </li>
-                    <li><a href="{% url 'create-play-campaign-url' %}" class="white-text">Play Campaign Url Builder<i
+                    <li><a href="{% url 'webcampaign:create-web-campaign-url' %}" class="white-text">Web UTM Link Builder<i
+                                class="material-icons white-text">link</i></a> </li>
+                    <li><a href="{% url 'playcampaign:create-play-campaign-url' %}" class="white-text">Play UTM Link Builder<i
                                 class="material-icons white-text">tap_and_play</i></a></li>
-                    <li><a href="{% url 'create_contact_request' %}" class="white-text">Contact Us<i
-                                class="material-icons white-text">perm_contact_calendar</i></a></li>
+                    <li><a href="{% url 'contact_request:create_contact_request' %}" class="white-text">Contact Us<i
+                                class="material-icons white-text">mail</i></a></li>
                 </ul>
 
             </div>

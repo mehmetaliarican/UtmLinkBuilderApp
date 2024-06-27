@@ -23,7 +23,7 @@ from UtmLinkBuilderApp import settings
 
 urlpatterns = [
     path('authorized-panel/', admin.site.urls),
-    path('', include('apps.homepage.urls')),
+    path('', include('apps.homepage.urls', namespace='homepage')),
     path('contact_us/', include('apps.contact_request.urls')),
     path('playcampaign/', include('apps.playcampaign.urls')),
     path('webcampaign/', include('apps.webcampaign.urls')),
@@ -32,3 +32,8 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    
+
+admin.site.site_header = "Url Builder Admin"
+admin.site.site_title = "Url Builder Portal"
+admin.site.index_title = "Welcome to Admin Portal"
